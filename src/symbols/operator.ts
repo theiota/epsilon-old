@@ -1,3 +1,5 @@
+
+// The operator enum for creation of a term.
 enum Operator {
     Add = "+",
     Subtract = "-",
@@ -5,3 +7,5 @@ enum Operator {
     Divide = "/",
     Exponentiate = "^"
 }
+
+export default Operator;
