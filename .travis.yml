@@ -18,3 +18,9 @@ after_success:
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
+
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+      
