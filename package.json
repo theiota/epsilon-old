@@ -6,6 +6,7 @@
   "main": "dist/sigma-ts.umd.js",
   "module": "dist/sigma-ts.es5.js",
   "typings": "dist/types/sigma-ts.d.ts",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "files": [
     "dist"
   ],
