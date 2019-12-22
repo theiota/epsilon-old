@@ -1,11 +1,11 @@
-import GreekLetter from "./greekLetter"
+import GreekLetter from './greekLetter'
 
-export type constantType = String | Constant | Number | GreekLetter;
+export type constantType = String | Number | GreekLetter
 
 export default class Constant {
-    value: constantType;
+  value: constantType
 
-    constructor(value: constantType) {
-        this.value = value;
-    }
+  constructor(value: constantType) {
+    this.value = value
+  }
 }
