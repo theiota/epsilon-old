@@ -2,6 +2,13 @@ import NormalExpression from '../EETypes/NormalExpression'
 import Term from '../symbols/term'
 import Operator from '../symbols/operator'
 
+class ParsedTerm {
+  coefficient: number
+  constructor(coefficient: number) {
+    this.coefficient = coefficient
+  }
+}
+
 /**
  * The base class for an Expression.
  */
@@ -14,11 +21,35 @@ class Expression implements NormalExpression {
   }
 
   /**
+   * This eliminates all of the operators from the [[Term]] array
+   * @param terms The array of terms for reduction.
+   */
+  private reduceOperators(terms: Term[]): any[] {
+    return terms.map(term => ({
+      coefficient: term.coefficient,
+      value: term.value,
+      exponent: term.exponent
+    }))
+  }
+
+  /**
    * A command to add two expressions together. Supports function chaining.
    * @param expression The expression you wish to use the `add` command with.
    */
   add(expression: Expression): Expression {
+    // To find all the terms that
+    let selfTermsWithNoOperators = this.terms.map(term => {
+      return { coefficient: term.coefficient, value: term.value, exponent: term.exponent }
+    })
+
+    let newTermsWithNoOperators = expression.terms.map(term => {
+      return { coefficient: term.coefficient, value: term.value, exponent: term.exponent }
+    })
+
     console.log(expression)
+    selfTermsWithNoOperators.forEach(term => {
+      expression.terms.find
+    })
     return this
   }
 
