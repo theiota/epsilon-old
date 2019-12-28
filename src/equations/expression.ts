@@ -8,6 +8,12 @@ import Operator from '../symbols/operator'
 class Expression implements NormalExpression {
   terms: Term[]
   operator: Operator
+
+  /**
+   * The constructor for an Expression.
+   * @param terms The terms that initialize an [[Expression]].
+   * @param operator The operator that the expression is paired with.
+   */
   constructor(terms: Term[], operator: Operator) {
     this.terms = terms
     this.operator = operator
@@ -18,6 +24,7 @@ class Expression implements NormalExpression {
    * @param terms The array of terms for reduction.
    */
   private reduceOperators(terms: Term[]): any[] {
+    // This function maps over the array of terms, and returns everything except for the operator.
     return terms.map(term => ({
       coefficient: term.coefficient,
       value: term.value,
@@ -56,6 +63,11 @@ class Expression implements NormalExpression {
   subtract(expression: Expression): Expression {
     return this
   }
+
+  /**
+   * A helper function for [[distributeOperators]], in order to negate a certain type of operator.
+   * @param operator The operator to be negated.
+   */
   private static negateDistributableOperator(
     operator: DistributableOperator
   ): DistributableOperator {
@@ -76,6 +88,12 @@ class Expression implements NormalExpression {
 
     return returnOperator
   }
+
+  /**
+   * A function that distributes an operator over a certain expression.
+   * @param expression The expression to be distributed against
+   * @param operator The operator to distribute
+   */
   static distributeOperators(expression: Expression, operator: DistributableOperator) {
     expression.terms.forEach((term, index) => {
       switch (expression.operator) {
@@ -100,6 +118,11 @@ class Expression implements NormalExpression {
     })
     return true
   }
+
+  /**
+   * A function to figure out if an expression can be simplified.
+   * @param expression The [[Expression]] to be simplify-checked.
+   */
   static canBeSimplified(expression: Expression): Boolean {
     return true
   }
