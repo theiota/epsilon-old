@@ -1,14 +1,11 @@
 {
-  "name": "epsilon",
-  "version": "0.0.0-development",
+  "name": "epsilonmath",
+  "version": "0.0.1-development",
   "description": "",
   "keywords": [],
   "main": "dist/epsilon.umd.js",
   "module": "dist/epsilon.es5.js",
   "typings": "dist/types/epsilon.d.ts",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "files": [
     "dist"
   ],
@@ -113,7 +110,7 @@
     "rollup-plugin-node-resolve": "^3.4.0",
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-typescript2": "^0.18.0",
-    "semantic-release": "^15.4.0",
+    "semantic-release": "^15.14.0",
     "shelljs": "^0.8.3",
     "travis-deploy-once": "^5.0.9",
     "ts-jest": "^23.10.2",
