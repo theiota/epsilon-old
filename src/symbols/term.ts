@@ -15,9 +15,9 @@ type TermOperator = Operator | DistributableOperator
  */
 class Term {
   value: TermValue
-  coefficient: number
+  coefficient: Constant
   operator: TermOperator
-  exponent: Expression
+  exponent: Constant
 
   /**
    * The constructor of a term.
@@ -27,7 +27,7 @@ class Term {
    * @param exponent The exponent the term is raised to. For instance, '1' would be the exponent of +4x.
    * @constructor
    */
-  constructor(operator: TermOperator, coefficient: number, value: TermValue, exponent: Expression) {
+  constructor(operator: TermOperator, coefficient: Constant, value: TermValue, exponent: Constant) {
     this.coefficient = coefficient
     this.operator = operator
     this.value = value
