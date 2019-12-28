@@ -1,11 +1,11 @@
 {
-  "name": "theta",
+  "name": "delta",
   "version": "0.0.0-development",
   "description": "",
   "keywords": [],
-  "main": "dist/theta.umd.js",
-  "module": "dist/theta.es5.js",
-  "typings": "dist/types/theta.d.ts",
+  "main": "dist/delta.umd.js",
+  "module": "dist/delta.es5.js",
+  "typings": "dist/types/delta.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
@@ -15,7 +15,7 @@
   "author": "Rishi Kothari <itsrishikothari@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rishiosaur/theta"
+    "url": "https://github.com/rishiosaur/delta"
   },
   "license": "MIT",
   "engines": {

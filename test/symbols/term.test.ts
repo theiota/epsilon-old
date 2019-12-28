@@ -1,4 +1,4 @@
-import { Term, Operator, Variable, Constant, GreekLetter } from '../../src/theta'
+import { Term, Operator, Variable, Constant, GreekLetter } from '../../src/delta'
 
 describe('Term utility tests', () => {
   it('can return a string from a simple term sequence', () => {

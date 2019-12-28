@@ -4,10 +4,13 @@ import Constant from './constant'
 import Expression from '../equations/expression'
 
 /**
- * The possible types for a
+ * The possible types for a [[Term]]'s value.
  */
 type TermValue = Variable | Constant | Variable[]
 
+/**
+ * The possible types for a [[Term]]'s operator.
+ */
 type TermOperator = Operator | DistributableOperator
 
 /**
