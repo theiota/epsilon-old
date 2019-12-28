@@ -56,6 +56,53 @@ class Expression implements NormalExpression {
   subtract(expression: Expression): Expression {
     return this
   }
+  private static negateDistributableOperator(
+    operator: DistributableOperator
+  ): DistributableOperator {
+    // VSCode will throw an error, stating that it's being used without being defined.
+    let returnOperator: DistributableOperator = DistributableOperator.Subtract
+    switch (operator) {
+      case DistributableOperator.Add:
+        returnOperator = DistributableOperator.Subtract
+        break
+
+      case DistributableOperator.Subtract:
+        returnOperator = DistributableOperator.Add
+        break
+
+      default:
+        break
+    }
+
+    return returnOperator
+  }
+  static distributeOperators(expression: Expression, operator: DistributableOperator) {
+    expression.terms.forEach((term, index) => {
+      switch (expression.operator) {
+        case Operator.Add:
+          break
+
+        case Operator.Subtract:
+          expression.terms[index].operator = Expression.negateDistributableOperator(
+            (expression.operator as unknown) as DistributableOperator
+          )
+          break
+
+        case Operator.Multiply:
+          break
+
+        case Operator.Divide:
+          break
+
+        default:
+          break
+      }
+    })
+    return true
+  }
+  static canBeSimplified(expression: Expression): Boolean {
+    return true
+  }
 }
 
 export default Expression
