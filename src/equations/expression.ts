@@ -94,10 +94,14 @@ class Expression implements NormalExpression {
    * @param expression The expression to be distributed against
    * @param operator The operator to distribute
    */
-  static distributeOperators(expression: Expression, operator: DistributableOperator) {
+  static distributeOperators(expression: Expression, operator: DistributableOperator): Expression {
+    let prototypeExpression = expression
     expression.terms.forEach((term, index) => {
       switch (expression.operator) {
         case Operator.Add:
+          if (operator === DistributableOperator.Add) {
+            expression.terms[index].operator = Operator.Add
+          }
           break
 
         case Operator.Subtract:
@@ -116,7 +120,7 @@ class Expression implements NormalExpression {
           break
       }
     })
-    return true
+    return prototypeExpression
   }
 
   /**
