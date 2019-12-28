@@ -1,6 +1,6 @@
 import NormalExpression from '../EETypes/NormalExpression'
 import Term from '../symbols/term'
-import Operator from '../symbols/operator'
+import Operator, { DistributableOperator } from '../symbols/operator'
 
 /**
  * The base class for an Expression.
