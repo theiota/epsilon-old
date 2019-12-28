@@ -42,19 +42,19 @@ class Term {
     // Typeguarding
     if (value instanceof Variable) {
       // Variables are usually represented as x^3
-      prototypeValue = `${value.name}${value.exponent}`
+      prototypeValue = `${value.name}^${value.exponent}`
     } else if (value instanceof Constant) {
       // Constants are represented as their numerical form.
       prototypeValue = `${value.value}`
     } else {
       // Because the only other type is an array of Variables, we must map over it.
       value.forEach((variable, index, arr) => {
-        prototypeValue += `${variable.name}${variable.exponent}${index === arr.length ? '' : '*'}`
+        prototypeValue += `${variable.name}^${variable.exponent}${index === arr.length ? '' : '*'}`
       })
     }
 
     // The usual form of a terms is something like: +4(x^n*y^3)
-    return `${operator.valueOf()}${coefficient}(${prototypeValue})^${exponent}`
+    return `${operator.valueOf()}${coefficient.value}(${prototypeValue})^${exponent.value}`
   }
 }
 
