@@ -1,0 +1,23 @@
+{
+  "sigma-ts": {
+    "Introduction": [
+      "index",
+      "globals"
+    ],
+    "Classes": [
+      "classes/constant",
+      "classes/dummyclass",
+      "classes/expression",
+      "classes/term",
+      "classes/variable"
+    ],
+    "Enums": [
+      "enums/distributableoperator",
+      "enums/greekletter",
+      "enums/operator"
+    ],
+    "Interfaces": [
+      "interfaces/normalexpression"
+    ]
+  }
+}

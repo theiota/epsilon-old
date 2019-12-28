@@ -1,19 +1,21 @@
 {
-  "name": "sigma-ts",
+  "name": "theta-ts",
   "version": "0.0.0-development",
   "description": "",
   "keywords": [],
-  "main": "dist/sigma-ts.umd.js",
-  "module": "dist/sigma-ts.es5.js",
-  "typings": "dist/types/sigma-ts.d.ts",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "main": "dist/theta-ts.umd.js",
+  "module": "dist/theta-ts.es5.js",
+  "typings": "dist/types/theta-ts.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "files": [
     "dist"
   ],
   "author": "Rishi Kothari <itsrishikothari@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rishiosaur/SigmaTS"
+    "url": "https://github.com/rishiosaur/theta"
   },
   "license": "MIT",
   "engines": {
@@ -22,10 +24,10 @@
   "scripts": {
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
-    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --mode file src",
+    "build": "tsc --module commonjs && rollup -c rollup.config.ts && npm run build:docs",
     "build:docs": "typedoc --out docs --target es6 --mode file src",
     "start": "rollup -c rollup.config.ts -w",
-    "start:docs": "typedoc --out docs --target es6 --mode file src && cd docs && python -m SimpleHTTPServer",
+    "start:docs": "npm run build:docs && cd docs && python -m SimpleHTTPServer",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
     "test:prod": "npm run lint && npm run test -- --no-cache",
@@ -120,6 +122,7 @@
     "tslint-config-prettier": "^1.15.0",
     "tslint-config-standard": "^8.0.1",
     "typedoc": "^0.12.0",
+    "typedoc-plugin-markdown": "^2.2.14",
     "typescript": "^3.0.3"
   }
 }

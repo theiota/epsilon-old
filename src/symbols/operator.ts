@@ -8,4 +8,9 @@ enum Operator {
   None = ''
 }
 
+export enum DistributableOperator {
+  Add = Operator.Add,
+  Subtract = Operator.Subtract
+}
+
 export default Operator
