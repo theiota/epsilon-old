@@ -1,11 +1,11 @@
 {
-  "name": "theta-ts",
+  "name": "theta",
   "version": "0.0.0-development",
   "description": "",
   "keywords": [],
-  "main": "dist/theta-ts.umd.js",
-  "module": "dist/theta-ts.es5.js",
-  "typings": "dist/types/theta-ts.d.ts",
+  "main": "dist/theta.umd.js",
+  "module": "dist/theta.es5.js",
+  "typings": "dist/types/theta.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
