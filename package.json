@@ -1,11 +1,11 @@
 {
-  "name": "delta",
+  "name": "epsilon",
   "version": "0.0.0-development",
   "description": "",
   "keywords": [],
-  "main": "dist/delta.umd.js",
-  "module": "dist/delta.es5.js",
-  "typings": "dist/types/delta.d.ts",
+  "main": "dist/epsilon.umd.js",
+  "module": "dist/epsilon.es5.js",
+  "typings": "dist/types/epsilon.d.ts",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
@@ -15,7 +15,7 @@
   "author": "Rishi Kothari <itsrishikothari@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rishiosaur/delta"
+    "url": "https://github.com/rishiosaur/epsilon"
   },
   "license": "MIT",
   "engines": {

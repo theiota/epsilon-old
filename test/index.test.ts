@@ -1,4 +1,4 @@
-import { Expression, Constant, GreekLetter, Variable, Term, Operator } from '../src/delta'
+import { Expression, Constant, GreekLetter, Variable, Term, Operator } from '../src/epsilon'
 
 /**
  * Dummy test
