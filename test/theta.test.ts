@@ -34,6 +34,6 @@ describe('GreekLetter Export test', () => {
   })
 
   it('GreekLetter is instantiable', () => {
-    expect(GreekLetter.alpha).toBe(0)
+    expect(GreekLetter.Alpha).toBe('\u0391')
   })
 })
