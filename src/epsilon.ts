@@ -1,6 +1,13 @@
-// Import here Polyfills if needed. Recommended core-js (npm i -D core-js)
-// import "core-js/fn/array.find"
-// ...
+/*
+Welcome to
+ ______     ______   ______     __     __         ______     __   __   
+/\  ___\   /\  == \ /\  ___\   /\ \   /\ \       /\  __ \   /\ "-.\ \  
+\ \  __\   \ \  _-/ \ \___  \  \ \ \  \ \ \____  \ \ \/\ \  \ \ \-.  \ 
+ \ \_____\  \ \_\    \/\_____\  \ \_\  \ \_____\  \ \_____\  \ \_\\"\_\
+  \/_____/   \/_/     \/_____/   \/_/   \/_____/   \/_____/   \/_/ \/_/
+                                                                       
+
+*/
 
 import Expression from './equations/expression'
 import Constant from './symbols/constant'
