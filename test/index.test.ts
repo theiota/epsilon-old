@@ -11,7 +11,14 @@ describe('Expression Export test', () => {
   it('Expression is instantiable', () => {
     expect(
       new Expression(
-        [new Term(Operator.Add, new Constant(3), new Variable('x', 2), new Constant(2))],
+        [
+          new Term(
+            Operator.Add,
+            new Constant(3),
+            new Variable('x', new Constant(2)),
+            new Constant(2)
+          )
+        ],
         Operator.Add
       )
     ).toBeInstanceOf(Expression)
