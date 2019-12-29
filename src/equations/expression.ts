@@ -135,11 +135,18 @@ class Expression implements NormalExpression {
     return true
   }
 
-  public toString(): String {
+  /**
+   * The method to stringify an expression using its `this` property.
+   */
+  public selfToString(): String {
     return Expression.toString(this)
   }
 
-  private static toString(expression: Expression): String {
+  /**
+   * The general method for stringifying an Expression.
+   * @param expression The expression to be stringified
+   */
+  public static toString(expression: Expression): String {
     let prototypeString: string = ''
     expression.terms.forEach(term => {
       prototypeString += term.toString()
