@@ -101,13 +101,17 @@ class Expression implements NormalExpression {
         case Operator.Add:
           if (operator === DistributableOperator.Add) {
             expression.terms[index].operator = Operator.Add
+          } else if (operator === DistributableOperator.Subtract) {
+            expression.terms[index].operator = Operator.Subtract
           }
           break
 
         case Operator.Subtract:
-          expression.terms[index].operator = Expression.negateDistributableOperator(
-            (expression.operator as unknown) as DistributableOperator
-          )
+          if (operator === DistributableOperator.Add) {
+            expression.terms[index].operator = Operator.Subtract
+          } else if (operator === DistributableOperator.Subtract) {
+            expression.terms[index].operator = Operator.Add
+          }
           break
 
         case Operator.Multiply:
@@ -129,6 +133,20 @@ class Expression implements NormalExpression {
    */
   static canBeSimplified(expression: Expression): Boolean {
     return true
+  }
+
+  public toString(): String {
+    return Expression.toString(this)
+  }
+
+  private static toString(expression: Expression): String {
+    let prototypeString: string = ''
+    expression.terms.forEach(term => {
+      prototypeString += term.toString()
+    })
+    prototypeString = `${expression.operator}(${prototypeString})`
+
+    return prototypeString
   }
 }
 
