@@ -1,4 +1,5 @@
 import GreekLetter from './greekLetter'
+import { Constant } from '../epsilon'
 
 /**
  * The types used in the [[Variable]] class.
@@ -11,7 +12,7 @@ export type VariableTypes = GreekLetter | String
  */
 export default class Variable {
   name: VariableTypes
-  exponent: number
+  exponent: Constant
 
   /**
    * The constructor of the [[Variable]] class.
@@ -19,7 +20,7 @@ export default class Variable {
    * @param exponent The exponent that you would like the variable to be lifted to.
    * @constructor
    */
-  constructor(name: VariableTypes, exponent: number) {
+  constructor(name: VariableTypes, exponent: Constant) {
     this.name = name
     this.exponent = exponent
   }
