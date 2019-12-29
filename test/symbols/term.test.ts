@@ -16,10 +16,10 @@ describe('Term utility tests', () => {
       Operator.Multiply,
       new Constant(93),
       [
-        new Variable(GreekLetter.Epsilon, 2),
-        new Variable('n', 2),
-        new Variable('n', 2),
-        new Variable('n', 2)
+        new Variable(GreekLetter.Epsilon, new Constant(2)),
+        new Variable('n', new Constant(2)),
+        new Variable('n', new Constant(2)),
+        new Variable('n', new Constant(2))
       ],
       new Constant(2)
     )
