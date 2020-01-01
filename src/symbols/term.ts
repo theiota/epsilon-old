@@ -36,7 +36,7 @@ class Term {
 
   public toString(): String {
     // Variable definitions
-    let { operator, coefficient, value, exponent } = this
+    let { operator, coefficient, value } = this
     let prototypeValue = ''
 
     // Typeguarding
