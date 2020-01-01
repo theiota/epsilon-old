@@ -6,12 +6,12 @@ import Expression from '../equations/expression'
 /**
  * The possible types for a [[Term]]'s value.
  */
-type TermValue = Variable | Constant | Variable[]
+export type TermValue = Variable | Constant | Variable[]
 
 /**
  * The possible types for a [[Term]]'s operator.
  */
-type TermOperator = Operator | DistributableOperator
+export type TermOperator = Operator | DistributableOperator
 
 /**
  * The class for a Term. This is the class that gets shifted around.
@@ -20,21 +20,18 @@ class Term {
   value: TermValue
   coefficient: Constant
   operator: TermOperator
-  exponent: Constant
 
   /**
    * The constructor of a term.
    * @param operator the operator that is paired with a term. For instance, '+' would be the operator in +4x.
    * @param coefficient The coefficient of the term. For instance, '4' would be the operator in +4x.
    * @param value The value of the term. For instance, the variable 'x' would be the value in +4x.
-   * @param exponent The exponent the term is raised to. For instance, '1' would be the exponent of +4x.
    * @constructor
    */
-  constructor(operator: TermOperator, coefficient: Constant, value: TermValue, exponent: Constant) {
+  constructor(operator: TermOperator, coefficient: Constant, value: TermValue) {
     this.coefficient = coefficient
     this.operator = operator
     this.value = value
-    this.exponent = exponent
   }
 
   public toString(): String {
@@ -59,7 +56,7 @@ class Term {
     }
 
     // The usual form of a terms is something like: +4(x^n*y^3)
-    return `${operator.valueOf()}${coefficient.value}(${prototypeValue})^${exponent.value}`
+    return `${operator.valueOf()}${coefficient.value}(${prototypeValue})`
   }
 }
 
