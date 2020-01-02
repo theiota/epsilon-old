@@ -9,13 +9,8 @@ describe('Basic Expression tests', () => {
   it('can distribute terms over a simple expression', () => {
     let expression = new Expression(
       [
-        new Term(
-          Operator.Add,
-          new Constant(4),
-          new Variable('x', new Constant(2)),
-          new Constant(3)
-        ),
-        new Term(Operator.Add, new Constant(4), new Variable('x', new Constant(2)), new Constant(3))
+        new Term(Operator.Add, new Constant(4), new Variable('x', new Constant(2))),
+        new Term(Operator.Add, new Constant(4), new Variable('x', new Constant(2)))
       ],
       Operator.Add
     )
@@ -27,18 +22,8 @@ describe('Basic Expression tests', () => {
 
     let expressionToTest = new Expression(
       [
-        new Term(
-          Operator.Subtract,
-          new Constant(4),
-          new Variable('x', new Constant(2)),
-          new Constant(3)
-        ),
-        new Term(
-          Operator.Subtract,
-          new Constant(4),
-          new Variable('x', new Constant(2)),
-          new Constant(3)
-        )
+        new Term(Operator.Subtract, new Constant(4), new Variable('x', new Constant(2))),
+        new Term(Operator.Subtract, new Constant(4), new Variable('x', new Constant(2)))
       ],
       Operator.Add
     )
@@ -49,23 +34,13 @@ describe('Basic Expression tests', () => {
   it('can transfer a simple expression to a string', () => {
     let expression = new Expression(
       [
-        new Term(
-          Operator.Add,
-          new Constant(4),
-          new Variable('x', new Constant(2)),
-          new Constant(3)
-        ),
-        new Term(
-          Operator.Add,
-          new Constant(4),
-          new Variable('x', new Constant(2)),
-          new Constant(3)
-        ),
-        new Term(Operator.Add, new Constant(4), new Variable('x', new Constant(2)), new Constant(3))
+        new Term(Operator.Add, new Constant(4), new Variable('x', new Constant(2))),
+        new Term(Operator.Add, new Constant(4), new Variable('x', new Constant(2))),
+        new Term(Operator.Add, new Constant(4), new Variable('x', new Constant(2)))
       ],
       Operator.Add
     )
 
-    expect(expression.selfToString()).toBe('+(+4(x^2)^3+4(x^2)^3+4(x^2)^3)')
+    expect(expression.selfToString()).toBe('+(+4(x^2)+4(x^2)+4(x^2))')
   })
 })
