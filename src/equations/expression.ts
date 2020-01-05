@@ -1,6 +1,17 @@
 import NormalExpression from '../EETypes/NormalExpression'
-import Term from '../symbols/term'
+import Term, { TermValue, TermOperator } from '../symbols/term'
 import Operator, { DistributableOperator } from '../symbols/operator'
+import { Constant } from '../epsilon'
+
+class CoefficientLessTerm {
+  value: TermValue
+  operator: TermOperator
+
+  constructor(value: TermValue, operator: TermOperator) {
+    this.value = value
+    this.operator = operator
+  }
+}
 
 /**
  * The base class for an Expression.
@@ -27,8 +38,7 @@ class Expression implements NormalExpression {
     // This function maps over the array of terms, and returns everything except for the operator.
     return terms.map(term => ({
       coefficient: term.coefficient,
-      value: term.value,
-      exponent: term.exponent
+      value: term.value
     }))
   }
 
@@ -135,10 +145,46 @@ class Expression implements NormalExpression {
     return true
   }
 
+  static collectLikeTerms(expression: Expression): Expression {
+    let prototypeExpression: Expression = expression
+    let termsWithoutCoefficients: any[] = []
+
+    expression.terms.forEach(term => {
+      termsWithoutCoefficients.push({
+        operator: term.operator,
+        value: term.value
+      })
+    })
+
+    let indicesOfLikeTerms: number[][] = []
+    let prototypeTerms = []
+
+    termsWithoutCoefficients.forEach(element => {
+      let indices: number[] = []
+      termsWithoutCoefficients.forEach((termProt, index) => {
+        if (!([] as number[]).concat(...indicesOfLikeTerms).includes(index)) {
+          if (
+            termProt === element &&
+            element.operator !== Operator.Multiply &&
+            element.operator !== Operator.Divide
+          ) {
+            indices.push(index)
+          }
+        }
+      })
+      indicesOfLikeTerms.push(indices)
+    })
+
+    indicesOfLikeTerms.forEach(term => {
+      // loop through indices, sum up all coefficients, store in array
+    })
+
+    return prototypeExpression
+  }
   /**
    * The method to stringify an expression using its `this` property.
    */
-  public selfToString(): String {
+  public toString(): String {
     return Expression.toString(this)
   }
 
