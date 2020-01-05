@@ -41,6 +41,6 @@ describe('Basic Expression tests', () => {
       Operator.Add
     )
 
-    expect(expression.selfToString()).toBe('+(+4(x^2)+4(x^2)+4(x^2))')
+    expect(expression.toString()).toBe('+(+4(x^2)+4(x^2)+4(x^2))')
   })
 })
