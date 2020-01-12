@@ -1,6 +1,6 @@
 import GreekLetter from './greekLetter'
 
-export type constantType = String | Number | GreekLetter
+export type constantType = number
 
 export default class Constant {
   value: constantType
