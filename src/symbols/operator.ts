@@ -13,4 +13,6 @@ export enum DistributableOperator {
   Subtract = Operator.Subtract
 }
 
+export type InclusiveOperator = Operator | DistributableOperator
+
 export default Operator
