@@ -181,6 +181,7 @@ class Expression implements NormalExpression {
 
     return prototypeExpression
   }
+
   /**
    * The method to stringify an expression using its `this` property.
    */
@@ -194,9 +195,11 @@ class Expression implements NormalExpression {
    */
   public static toString(expression: Expression): String {
     let prototypeString: string = ''
+
     expression.terms.forEach(term => {
       prototypeString += term.toString()
     })
+
     prototypeString = `${expression.operator}(${prototypeString})`
 
     return prototypeString
