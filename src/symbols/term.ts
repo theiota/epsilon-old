@@ -1,8 +1,7 @@
-import { InclusiveOperator, DistributableOperator } from './operator'
+import Operator, { InclusiveOperator, DistributableOperator } from './operator'
 import Variable from './variable'
 import Constant from './constant'
 import Expression from '../equations/expression'
-import Operator from './operator'
 
 /**
  * The possible types for a [[Term]]'s value.
